@@ -1,0 +1,19 @@
+tables:
+  source1: data/raw/test_source1.tsv
+  source2: data/raw/test_source2.tsv
+  source3: data/raw/test_source3.tsv
+  # Required by the common config schema but ignored unless --full is used.
+  labels: data/raw/train_ground_truth.tsv
+
+columns:
+  id: entity_id
+  name: business_name
+  address: business_address
+  country: country
+
+labels:
+  source1_id: source1_entity_id
+  matched_id: matched_entity_ids
+
+country_registry: configs/countries.yaml
+

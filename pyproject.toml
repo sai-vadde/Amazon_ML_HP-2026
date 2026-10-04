@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amazon-ml-entity-resolution"
+version = "0.1.0"
+description = "Memory-conscious business entity resolution pipeline"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "joblib>=1.4,<2",
+  "lightgbm>=4.5,<5",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<3",
+  "PyYAML>=6,<7",
+  "rapidfuzz>=3.9,<4",
+  "scikit-learn>=1.5,<2",
+  "scipy>=1.13,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.8,<1",
+]
+
+[project.scripts]
+entity-resolution = "entity_resolution.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+extend-exclude = ["organizer"]
+line-length = 100
+target-version = "py311"

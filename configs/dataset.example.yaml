@@ -1,0 +1,18 @@
+# Copy to configs/dataset.yaml after organizer files arrive.
+tables:
+  source1: data/raw/train_source1.tsv
+  source2: data/raw/train_source2.tsv
+  source3: data/raw/train_source3.tsv
+  labels: data/raw/train_ground_truth.tsv
+
+columns:
+  id: entity_id
+  name: business_name
+  address: business_address
+  country: country
+
+labels:
+  source1_id: source1_entity_id
+  matched_id: matched_entity_ids
+
+country_registry: configs/countries.yaml

@@ -1,0 +1,5 @@
+# Stable numeric IDs. Never reorder or reuse an ID; append future countries.
+unknown: 0
+US: 1
+India: 2
+France: 3

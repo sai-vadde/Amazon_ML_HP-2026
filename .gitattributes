@@ -1,0 +1,21 @@
+# Normalise every text file to LF in the repository.
+#
+# Not cosmetic. CRLF has cost this project real time three times:
+#   * gt_pairs.tsv was written in text mode, and a trailing CR made an external
+#     join resolve 0 of 7,638,365 rows;
+#   * a V7 checkpoint's five artifact digests all looked divergent from another
+#     machine's until the bytes were normalised, at which point two matched
+#     exactly;
+#   * a submission zip built from the Windows checkout carried CRLF on five of
+#     twenty-one source files, so it could not be verified byte-for-byte against
+#     the revision that produced it.
+#
+# With this in place a fresh checkout on any platform yields the bytes git stores,
+# so digests and packaged files are comparable across machines.
+* text=auto eol=lf
+
+# Binary: never touch these.
+*.npz binary
+*.zip binary
+*.png binary
+*.pdf binary

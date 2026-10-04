@@ -1,0 +1,17 @@
+.venv/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+data/raw/
+data/interim/
+data/processed/
+models/
+outputs/
+output/
+output_*/
+*.log
+
